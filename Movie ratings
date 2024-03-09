@@ -1,0 +1,27 @@
+qty = int(input())
+highest_rating = 0
+lowest_rating = 0
+average_rating = 0
+movie_highest = None
+movie_lowest = None
+
+for i in range(qty):
+    current_movie = input()
+    current_rating = float(input())
+    average_rating += current_rating
+    if i == 0:
+        highest_rating = current_rating
+        lowest_rating = current_rating
+        movie_highest = current_movie
+        movie_lowest = current_movie
+    else:
+        if current_rating > highest_rating:
+            highest_rating = current_rating
+            movie_highest = current_movie
+        if current_rating < lowest_rating:
+            lowest_rating = current_rating
+            movie_lowest = current_movie
+
+print(f'{movie_highest} is with highest rating: {highest_rating:.1f}')
+print(f'{movie_lowest} is with lowest rating: {lowest_rating:.1f}')
+print(f'Average rating: {average_rating / qty:.1f}')
